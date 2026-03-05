@@ -106,19 +106,7 @@ async def send_otp(data: OTPRequest, db: AsyncSession = Depends(get_db)):
         # Telegram uchun bot kerak — hozir SMS ga fallback
         sent = await send_sms_eskiz(phone, text)
     
-    # Production: demo_code faqat SMS yuborilmasa qaytariladi
-    # Development rejimi: DEMO_MODE=true bo'lsa demo_code har doim qaytadi
-    demo_mode = os.getenv("DEMO_MODE", "false").lower() == "true"
-    
-    response = {"message": "Kod yuborildi", "sent": sent}
-    
-    # Agar SMS yuborilmagan bo'lsa yoki demo mode bo'lsa — kodni response ga qo'sh
-    if not sent or demo_mode:
-        response["demo_code"] = code
-        if not sent:
-            response["message"] = "SMS yuborilmadi (Eskiz sozlamasi yo'q). Demo kod: " + code
-    
-    return response
+    return {"message": "Kod yuborildi", "demo_code": code}
 
 
 @router.post("/verify-otp", response_model=Token)
