@@ -1,4 +1,5 @@
 "use client";
+// static export placeholder
 import{useEffect,useState}from"react";
 import{useParams,useRouter}from"next/navigation";
 import dynamic from"next/dynamic";
@@ -8,6 +9,10 @@ import Carousel from"@/components/Carousel";
 
 const MapComponent=dynamic(()=>import("@/components/Map"),{ssr:false});
 
+
+export async function generateStaticParams() {
+  return [];
+}
 export default function ListingPage(){
   const{id}=useParams();
   const router=useRouter();
