@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "canary",
+    "next": "15.3.3",
     "react": "^18",
     "react-dom": "^18",
     "axios": "^1.6.8",
@@ -26,6 +26,6 @@
     "autoprefixer": "^10"
   },
   "overrides": {
-    "next": "15.3.1"
+    "next": "15.3.3"
   }
 }
