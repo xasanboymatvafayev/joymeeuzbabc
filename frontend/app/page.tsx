@@ -299,7 +299,7 @@ export default function HomePage(){
         </div>
       )}
 
-      <BottomNav active="home"/>
+      <BottomNav/>
     </div>
   );
 }
