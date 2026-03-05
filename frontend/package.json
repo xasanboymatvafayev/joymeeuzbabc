@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "15.3.3",
+    "next": "14.2.29",
     "react": "^18",
     "react-dom": "^18",
     "axios": "^1.6.8",
@@ -24,8 +24,5 @@
     "tailwindcss": "^3.4.1",
     "postcss": "^8",
     "autoprefixer": "^10"
-  },
-  "overrides": {
-    "next": "15.3.3"
   }
 }
